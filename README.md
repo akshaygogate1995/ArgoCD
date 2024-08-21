@@ -18,3 +18,15 @@
 5. Additional components used are **Redis** which is for caching.
 6. **Dex** as identity service to integrate with external identity providers.
 7. **ApplicationSet Controller** which automates the generation of ArgoCD Applications.
+
+# ArgoCD Installation
+1. Need of running K8s cluster could be minikube, Docker Desktop, Kind, Rancher Desktop, Full Cluster.
+2. Installation Options - Non HA availability setup, HA setup ( Atleast need 3 worker nodes)
+, Light Installation "Core".
+3. Privileges Options -
+Cluster-Admin Privileges: Where ArgoCD has the cluster-admin access to deploy into the cluster that runs in.
+Namespace level Privileges: Use this manifest set if you do not need Argo CD to deploy applications in the same cluster yjay ArgoCD runs in.
+4. Manifest Installation Options - YAML Manifests, Helm Chart, Kustomize
+
+
+
