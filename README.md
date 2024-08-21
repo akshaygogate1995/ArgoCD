@@ -9,3 +9,12 @@
 7. Disaster recovery is easy with ArgoCD.
 8. **SYNC** is the process of making desired state = actual state
 9. **Refresh(Compare)** is to compare the latest code in Git with Live state.
+
+# ArgoCD Arhitecture
+1. ArgoCD consist of 3 main components - **ArgoCD server (API + Web Server), ArgoCD Repo Server, ArgoCD Application Controller**.
+2. We need to interact only with ArgoCD server. ArgoCD web server is a **gRPC/REST** server which exposes the API consumed by the Web UI, CLI.
+3. **Repo server** is an internal service that is reponsible for cloning remote git repos and generate the needed k8s manifests.
+4. **Application controller** is kubernetes controller which continously monitors running applications and compares the current, live state against the desired target state. It communicates with Repo Server to get the generated manifests. It also communicates with k8s API to get actual cluster state.
+5. Additional components used are **Redis** which is for caching.
+6. **Dex** as identity service to integrate with external identity providers.
+7. **ApplicationSet Controller** which automates the generation of ArgoCD Applications.
