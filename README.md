@@ -27,6 +27,7 @@
 Cluster-Admin Privileges: Where ArgoCD has the cluster-admin access to deploy into the cluster that runs in.
 Namespace level Privileges: Use this manifest set if you do not need Argo CD to deploy applications in the same cluster yjay ArgoCD runs in.
 4. Manifest Installation Options - YAML Manifests, Helm Chart, Kustomize
+5. Installing ArgoCD CLI -> sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd  &&   rm argocd-linux-amd64  Then Enter **argocd login IP:PortNumber**
 
 
 
